@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { View, TextInput } from 'react-native';
-import {Card, CardSection, Button} from './common';
+import {Card, CardSection, Button, Input} from './common';
 
 class LoginForm extends Component {
   state = {
-    text: ''
+    email: '',
+    password: ''
   };
 
   render() {
@@ -12,12 +13,22 @@ class LoginForm extends Component {
       <View>
         <Card>
           <CardSection>
-            <TextInput
-              value={this.state.text}
-              onChangeText={(text) => this.setState({text})}
+            <Input
+              placeholder="username@email.com"
+              label="Email"
+              value={this.state.email}
+              onChangeText={(email) => this.setState({email})}
             />
           </CardSection>
-          <CardSection></CardSection>
+          <CardSection>
+            <Input
+              placeholder="Password"
+              label="Password"
+              value={this.state.password}
+              onChangeText={(password) => this.setState({password})}
+              secureTextEntry
+            />
+          </CardSection>
           <CardSection>
             <Button>Log In</Button>
           </CardSection>
