@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { View, Text } from 'react-native';
 import {Header, Button, Spinner, CardSection, Card} from './components/common';
 import LoginForm from './components/LoginForm';
+import Logout from './components/Logout';
 
 class App extends Component {
   state = {
@@ -42,13 +43,7 @@ class App extends Component {
     switch (this.state.loggedIn) {
       case true:
         return (
-          <View>
-            <Card>
-              <CardSection>
-                <Button>Logout</Button>
-              </CardSection>
-            </Card>
-          </View>
+          <Logout />
         );
       case false:
         return (
@@ -59,7 +54,7 @@ class App extends Component {
           <View>
             <Card>
               <CardSection>
-                <Button>Logout</Button>
+                <Spinner size="large" />
               </CardSection>
             </Card>
           </View>
